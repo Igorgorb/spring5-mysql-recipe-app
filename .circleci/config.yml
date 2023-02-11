@@ -6,6 +6,7 @@ orbs:
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   maven: circleci/maven@1.4
+  codecov: codecov/codecov@3.2.4
 
 executors:
   openjdk8:
@@ -28,6 +29,7 @@ jobs:
     
     environment:
       MAVEN_OPTS: -Xmx3200m
+      CODECOV_TOKEN: acc7675d-a5a6-455b-82c3-77a593bc9da0
       
     steps:
       - checkout
@@ -51,4 +53,5 @@ jobs:
 
       - store_test_results:
           path: target/surefire-reports
-
+      
+      - codecov/upload
