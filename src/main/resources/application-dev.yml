@@ -3,8 +3,8 @@ spring:
     url: jdbc:mysql://localhost:3306/sfg_dev?useSSL=false
     username: sfg_dev_user
     password: guru
-    initialization-mode: ALWAYS
-   # platform: 
+#    initialization-mode: ALWAYS
+    platform: mysql
      
   jpa:
     hibernate:
@@ -14,13 +14,12 @@ spring:
    # database-platform: org.hibernate.dialect.storage_engine=innodb
     database: MYSQL
     show-sql: true
-    properties: 
-      javax:
-        persistence:
-          schema-generation:
-            create-source: metadata
-            scripts:
-              action: create
-              create-target: guru-database-create.sql
-              
+#    properties: 
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: guru-database-create.sql
     
